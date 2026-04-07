@@ -2,6 +2,7 @@ interface Env {
   RESEND_API_KEY?: string;
   CONTACT_FROM_EMAIL?: string;
   CONTACT_TO_EMAIL?: string;
+  TURNSTILE_SECRET_KEY?: string;
 }
 
 type PagesContext = {
@@ -24,6 +25,10 @@ export async function onRequestPost(context: PagesContext) {
     return json({ error: 'Missing RESEND_API_KEY environment variable.' }, 500);
   }
 
+  if (!env.TURNSTILE_SECRET_KEY) {
+    return json({ error: 'Missing TURNSTILE_SECRET_KEY environment variable.' }, 500);
+  }
+
   let payload: Record<string, unknown>;
 
   try {
@@ -38,9 +43,34 @@ export async function onRequestPost(context: PagesContext) {
   const company = String(payload.company ?? '').trim();
   const subject = String(payload.subject ?? '').trim();
   const message = String(payload.message ?? '').trim();
+  const turnstileToken = String(payload.turnstileToken ?? '').trim();
 
-  if (!name || !email || !message) {
-    return json({ error: 'Name, email, and message are required.' }, 400);
+  if (!name || !email || !message || !turnstileToken) {
+    return json({ error: 'Name, email, message, and security verification are required.' }, 400);
+  }
+
+  const ipAddress = request.headers.get('CF-Connecting-IP') || undefined;
+  const turnstileBody = new URLSearchParams({
+    secret: env.TURNSTILE_SECRET_KEY,
+    response: turnstileToken,
+  });
+
+  if (ipAddress) {
+    turnstileBody.set('remoteip', ipAddress);
+  }
+
+  const turnstileResponse = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: turnstileBody.toString(),
+  });
+
+  const turnstileResult = (await turnstileResponse.json()) as { success?: boolean };
+
+  if (!turnstileResponse.ok || !turnstileResult.success) {
+    return json({ error: 'Security verification failed. Please try again.' }, 400);
   }
 
   const to = env.CONTACT_TO_EMAIL || 'sales@coderuns.com';

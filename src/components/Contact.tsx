@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import TurnstileWidget from './TurnstileWidget';
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', company: '', message: '' });
@@ -7,6 +8,8 @@ export default function Contact() {
     message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState('');
+  const [turnstileResetKey, setTurnstileResetKey] = useState(0);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -14,6 +17,12 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!turnstileToken) {
+      setStatus({ type: 'error', message: 'Please complete the security check.' });
+      return;
+    }
+
     setIsSubmitting(true);
     setStatus({ type: 'idle', message: '' });
 
@@ -26,6 +35,7 @@ export default function Contact() {
         body: JSON.stringify({
           ...form,
           subject: 'Homepage contact form submission',
+          turnstileToken,
         }),
       });
 
@@ -36,6 +46,7 @@ export default function Contact() {
       }
 
       setForm({ name: '', email: '', phone: '', company: '', message: '' });
+      setTurnstileToken('');
       setStatus({ type: 'success', message: data.message || 'Message sent successfully.' });
     } catch (error) {
       setStatus({
@@ -44,6 +55,7 @@ export default function Contact() {
       });
     } finally {
       setIsSubmitting(false);
+      setTurnstileResetKey((value) => value + 1);
     }
   };
 
@@ -140,6 +152,7 @@ export default function Contact() {
                 onChange={handleChange}
                 required
               />
+              <TurnstileWidget onTokenChange={setTurnstileToken} resetKey={turnstileResetKey} />
               {status.type !== 'idle' && (
                 <p
                   className={`rounded-2xl px-4 py-3 text-sm ${
