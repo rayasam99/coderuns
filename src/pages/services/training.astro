@@ -1,0 +1,107 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import AdvantagesSection from '../../components/AdvantagesSection.tsx';
+
+const programs = [
+  { title: 'Digital Transformation', highlight: 'Services', desc: 'Lead the way in the digital revolution. Our Digital Transformation Services training includes Web development, Mobile App Development, and Software Development. Training empowers your team to navigate and drive digital initiatives.' },
+  { title: 'Data Science & Analytics', highlight: 'Services', desc: 'Harness the power of data. Our Data Science & Analytics Services training delves into advanced analytics, machine learning, and predictive modeling, enabling your team to extract meaningful insights and drive informed decision-making.' },
+  { title: 'Data Engineering', highlight: 'Services', desc: 'Build robust data infrastructures. Our Data Engineering Services training covers the fundamentals of data engineering, including data pipelines, ETL processes, and data architecture, empowering your team to design and manage scalable data solutions.' },
+  { title: 'Cloud Computing', highlight: 'Excellence', desc: 'Unlock the full potential of cloud computing with our hands-on training in popular platforms like AWS, Azure, and Google Cloud. Empower your team to harness the scalability and efficiency of cloud technologies.' },
+  { title: 'Data Analytics', highlight: 'Proficiency', desc: 'Transform raw data into actionable insights. Our data analytics training equips your team with the skills to analyze and interpret data, enabling data-driven decision-making.' },
+  { title: 'Cyber Security', highlight: 'Mastery', desc: 'Protect your organization from evolving cyber threats with our comprehensive cybersecurity training. From ethical hacking to risk management, our courses cover the entire cybersecurity spectrum.' },
+  { title: 'Emerging Technologies', highlight: 'Exploration', desc: 'Stay ahead of the curve by exploring cutting-edge technologies such as AI, machine learning, blockchain, and IoT. Our training programs provide a deep dive into these transformative technologies.' },
+];
+
+const advantages = [
+  { title: 'Demonstrated Excellence', desc: 'Let our achievements tell the story of our unwavering success. Organizations of all sizes have entrusted us with their IT training needs and achieved tangible results.' },
+  { title: 'Continuous Support', desc: 'Learning doesn\'t end with the completion of a course. We provide ongoing support resources, and updates to ensure your team remains at the forefront of industry advancements.' },
+  { title: 'Adaptability', desc: 'In the dynamic landscape of technology, the ability to adapt is paramount. Our training programs evolve to incorporate the latest industry trends, keeping your team ahead of the curve.' },
+];
+---
+
+<Layout title="IT Training" description="Cutting-Edge IT Training Services by Coderuns.">
+  <PageHero title="IT Training" bg="/All-Inner-pages-BG.jpg" />
+
+  <!-- Intro -->
+  <section class="py-14 lg:py-20 bg-white">
+    <div class="max-w-325 mx-auto px-6">
+      <div class="flex flex-col lg:flex-row gap-7 lg:gap-12 items-start">
+        <div class="lg:w-5/12">
+          <span class="cr-eyebrow mb-4 inline-flex">Training</span>
+          <h2 class="cr-heading-lg text-[#292929] mt-4">
+            Empower Your Team with
+            <br /><span class="text-[#FD5F18]">Cutting-Edge IT Training</span>
+            <br />Services
+          </h2>
+        </div>
+        <div class="lg:w-7/12">
+          <p class="cr-body text-[#555] mb-4">In the dynamic realm of Information Technology, maintaining a competitive edge isn't merely advantageous; it's imperative. At Coderuns, we understand the pivotal role that continuous learning plays in the success of any organization. That's why we are proud to offer comprehensive and tailored IT training services designed to elevate your team's skills and keep your business at the forefront of technological innovation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programs Grid -->
+  <section class="py-20 bg-[#f9f9f9]">
+    <div class="max-w-325 mx-auto px-6">
+      <h2 class="cr-heading-lg text-[#292929] text-center mb-3">
+        Our Training <span class="text-[#FD5F18]">Programs</span>
+      </h2>
+      <div class="w-12 h-0.5 bg-[#FD5F18] mx-auto mb-12"></div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {programs.map((p, i) => (
+          <div class="bg-white border border-gray-100 rounded-2xl p-7 shadow-sm flex items-start gap-4">
+            <div class={`w-12 h-12 rounded-full flex items-center justify-center shrink-0 ${i % 2 === 0 ? 'bg-gray-200' : 'bg-[#FD5F18]'}`}>
+              <svg class={`w-6 h-6 ${i % 2 === 0 ? 'text-[#555]' : 'text-white'}`} fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+            </div>
+            <div>
+              <h3 class="cr-list-item text-[#292929] mb-2">{p.title} <span class="text-[#FD5F18]">{p.highlight}</span></h3>
+              <p class="cr-body text-[#555]">{p.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Approach -->
+  <section class="py-14 lg:py-20 bg-white">
+    <div class="max-w-325 mx-auto px-6">
+      <div class="flex flex-col lg:flex-row gap-7 lg:gap-12 items-center">
+        <div class="lg:w-6/12">
+          <span class="cr-eyebrow mb-4 inline-flex">Approach</span>
+          <h2 class="cr-heading-lg text-[#292929] mt-4 mb-4">Our <span class="text-[#FD5F18]">Approach</span></h2>
+          <div class="flex flex-col gap-6">
+            <div>
+              <h3 class="cr-heading-md text-[#292929] mb-1">Customized Training Solutions</h3>
+              <p class="cr-body text-[#555]">No two organizations are the same, and neither are their IT needs. We specialize in creating customized training programs that align with your business objectives. Whether you're looking to upskill your team in cloud computing, data analytics, or emerging technologies, we have the expertise to tailor a program that fits your unique requirements.</p>
+            </div>
+            <div>
+              <h3 class="cr-heading-md text-[#292929] mb-1">Industry-Expert Instructors</h3>
+              <p class="cr-body text-[#555]">Our courses are led by industry-expert instructors who bring real-world experience to the training room. With a deep understanding of the latest trends and technologies, our instructors ensure that your team gains practical knowledge that can be immediately applied to enhance your business operations.</p>
+            </div>
+            <div>
+              <h3 class="cr-heading-md text-[#292929] mb-1">Flexible Learning Options</h3>
+              <p class="cr-body text-[#555]">We recognize the challenges of balancing professional development with day-to-day responsibilities. That's why we offer flexible learning options, including on-site training, virtual classrooms, and self-paced online courses. Choose the format that best suits your team's schedule and learning preferences.</p>
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-6/12 rounded-2xl overflow-hidden bg-gray-200 min-h-96">
+          <img src="/images/training-approach.jpg" alt="Our Approach" class="w-full h-full object-cover" onerror="this.parentElement.style.background='#e5e7eb'" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-12 bg-[#f9f9f9] text-center">
+    <div class="max-w-325 mx-auto px-6">
+      <p class="cr-body text-[#555] max-w-2xl mx-auto">
+        Invest in the future of your business with Coderuns IT training services. Contact us today to discuss how we can tailor a program to elevate your team's skills and drive your organization's success.
+      </p>
+    </div>
+  </section>
+
+  <AdvantagesSection client:load heading="Why Choose Coderuns" items={advantages} highlight={1} />
+</Layout>

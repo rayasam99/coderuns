@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.tsx';
+import Services from '../components/Services.tsx';
+import CTABanner from '../components/CTABanner.tsx';
+import About from '../components/About.tsx';
+import Industries from '../components/Industries.tsx';
+import Reviews from '../components/Reviews.tsx';
+import Contact from '../components/Contact.tsx';
+import Stats from '../components/Stats.tsx';
+import Blog from '../components/Blog.tsx';
+---
+
+<Layout title="Home" description="Coderuns — Your trusted partner in IT consulting and custom software development.">
+  <Hero client:load />
+  <Services client:load />
+  <CTABanner client:load />
+  <About client:load />
+  <Industries client:load />
+  <Reviews client:load />
+  <Contact client:load />
+  <Stats client:load />
+  <Blog client:load />
+</Layout>

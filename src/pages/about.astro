@@ -1,0 +1,174 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import AdvantagesSection from '../components/AdvantagesSection.tsx';
+
+
+const whyCoderuns = [
+  { title: 'Precision in Technology', desc: 'Unmatched expertise in deploying the latest technologies. We don\'t simply conform to trends; we establish them.' },
+  { title: 'Tailor-Made Solutions', desc: 'No cookie-cutter approaches. We analyze your challenges to deliver solutions that fit like a glove.' },
+  { title: 'Rapid Results, Lasting Impact', desc: 'We\'re not just about quick fixes. Our solutions are designed to make sure your success and enduring impact.' },
+  { title: 'Client-First Philosophy', desc: 'Your goals are our priority. Our client-centric philosophy ensures your success is at the forefront of every decision.' },
+  { title: 'Agile Innovation', desc: 'The tech landscape moves fast, and so do we. Agile methodologies and a culture of innovation keep us ahead of the curve.' },
+  { title: 'Future-Ready Partnerships', desc: 'Partner with us for a future-ready business. We don\'t merely react to change; we foresee and prepare for it.' },
+];
+
+const services = [
+  'Digital Transformation Services', 'IT Training Services',
+  'Data Science & Analytics Services', 'IT Consulting Services',
+  'Data Engineering Services', 'IT Outsourcing Services',
+  'Data Analytics Services', 'IT Staff Augmentation Services',
+  'Cloud Computing Services', 'Internet of Things (IoT)',
+];
+---
+
+<Layout title="About Us" description="Learn more about Coderuns — our story, mission, and team.">
+  <PageHero title="About Us" bg="/All-Inner-pages-BG.jpg" />
+
+  <!-- Who We Are -->
+  <section class="py-14 lg:py-20 bg-white">
+    <div class="max-w-325 mx-auto px-6">
+      <div class="flex flex-col lg:flex-row gap-7 lg:gap-12 items-start">
+        <div class="lg:w-5/12">
+          <h2 class="cr-heading-lg text-[#292929] mb-3">Who We <span class="text-[#FD5F18]">Are</span></h2>
+        </div>
+        <div class="lg:w-7/12">
+          <p class="cr-body text-[#555] mb-4">
+            Coderuns excels as a software development company, bringing a wealth of experience in various IT services and a proven track record of delivering expert guidance on IT matters. Our customer-focused approach ensures that the programs we deliver not only meet our client's business goals but also provide both expected and unexpected competitive advantages.
+          </p>
+          <p class="cr-body text-[#555]">
+            As an IT development and consulting company with a wide range of services, Coderuns houses a diverse team of IT specialists. We have broad skills, knowledge, and expertise in using the latest tech stack for outstanding results. Our skilled developers and designers are dedicated to bringing your creative ideas to life, turning them into user-friendly and visually appealing solutions.
+          </p>
+        </div>
+      </div>
+
+      <!-- Image Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-10">
+        <div class="rounded-2xl overflow-hidden h-64 bg-gray-200">
+          <img src="/about/Coderuns-about-Us-Img.jpg" alt="Office" class="w-full h-full object-cover" onerror="this.parentElement.style.background='#e5e7eb'" />
+        </div>
+        <div class="rounded-2xl overflow-hidden h-64 bg-gray-200">
+          <img src="/about/Coderuns-about-Us-Img-1.jpg" alt="Team" class="w-full h-full object-cover" onerror="this.parentElement.style.background='#e5e7eb'" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IT Services -->
+  <section class="py-14 lg:py-20 bg-[#f9f9f9]">
+    <div class="max-w-325 mx-auto px-6">
+      <div class="flex flex-col lg:flex-row gap-7 lg:gap-12 items-start">
+        <div class="lg:w-3/5">
+          <span class="cr-eyebrow mb-4 inline-flex">IT Services</span>
+          <h2 class="cr-heading-lg text-[#292929] mt-4 mb-3">
+            IT Services <span class="text-[#FD5F18]">our Software</span>
+            <br />Development Company offers
+          </h2>
+          <p class="cr-body text-[#555] mb-6">
+            We offer a bunch of IT services designed just for you. Whether you need custom software or expert IT advice, we've got you covered. Our goal is to create solutions that match what you want and even go beyond.
+          </p>
+          <ul class="grid grid-cols-2 gap-y-2 gap-x-4 mb-6">
+            {services.map((s) => (
+              <li class="flex items-center gap-2 cr-list-item text-[#333]">
+                <svg class="w-4 h-4 text-[#FD5F18] shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                </svg>
+                {s}
+              </li>
+            ))}
+          </ul>
+          <h3 class="cr-heading-md text-[#292929] mt-6 mb-2">Our Vision</h3>
+          <p class="cr-body text-[#555]">
+            At Coderuns, we envision a future where technological innovation seamlessly integrates with the aspirations of businesses. We aspire to be the compass that guides organizations through the complexities of the digital era with confidence.
+          </p>
+        </div>
+        <div class="lg:w-2/5 rounded-2xl overflow-hidden bg-gray-200">
+          <img src="/about/code-runs-About-Us-1.jpg" alt="Work" class="w-full h-auto object-contain" onerror="this.parentElement.style.background='#e5e7eb'" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Values -->
+  <section class="py-20 bg-[#f9f9f9]">
+    <div class="max-w-325 mx-auto px-6">
+      <div class="text-center mb-14">
+        <span class="cr-eyebrow mb-4 inline-flex">What Drives Us</span>
+        <h2 class="cr-heading-lg text-[#292929] mt-4">Our Core <span class="text-[#FD5F18]">Values</span></h2>
+      </div>
+
+      <!-- Row 1: 3 cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+
+        <!-- Quality -->
+        <div class="bg-white rounded-2xl p-8 shadow-sm border-t-4 border-[#FD5F18] group hover:shadow-md transition-shadow">
+          <div class="w-14 h-14 rounded-2xl bg-[#FD5F18]/10 flex items-center justify-center mb-5 group-hover:bg-[#FD5F18]/20 transition-colors">
+            <svg class="w-7 h-7 text-[#FD5F18]" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+            </svg>
+          </div>
+          <h3 class="cr-heading-md text-[#292929] mb-3">Quality</h3>
+          <p class="cr-body text-[#555]">Our commitment to quality is the cornerstone of our operations. We strive for excellence in every facet of our work.</p>
+        </div>
+
+        <!-- Flexibility -->
+        <div class="bg-white rounded-2xl p-8 shadow-sm border-t-4 border-[#FD5F18] group hover:shadow-md transition-shadow">
+          <div class="w-14 h-14 rounded-2xl bg-[#FD5F18]/10 flex items-center justify-center mb-5 group-hover:bg-[#FD5F18]/20 transition-colors">
+            <svg class="w-7 h-7 text-[#FD5F18]" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+            </svg>
+          </div>
+          <h3 class="cr-heading-md text-[#292929] mb-3">Flexibility</h3>
+          <p class="cr-body text-[#555]">In a fast-paced and ever-changing technology landscape, flexibility is key. We tailor our services to your dynamic needs.</p>
+        </div>
+
+        <!-- Creativity -->
+        <div class="bg-white rounded-2xl p-8 shadow-sm border-t-4 border-[#FD5F18] group hover:shadow-md transition-shadow">
+          <div class="w-14 h-14 rounded-2xl bg-[#FD5F18]/10 flex items-center justify-center mb-5 group-hover:bg-[#FD5F18]/20 transition-colors">
+            <svg class="w-7 h-7 text-[#FD5F18]" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+            </svg>
+          </div>
+          <h3 class="cr-heading-md text-[#292929] mb-3">Creativity</h3>
+          <p class="cr-body text-[#555]">Creativity fuels innovation. We infuse every project with inventive thinking to stand out for imaginative design.</p>
+        </div>
+
+      </div>
+
+      <!-- Row 2: 2 cards centered -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:max-w-2xl md:mx-auto">
+
+        <!-- Reliability -->
+        <div class="bg-white rounded-2xl p-8 shadow-sm border-t-4 border-[#FD5F18] group hover:shadow-md transition-shadow">
+          <div class="w-14 h-14 rounded-2xl bg-[#FD5F18]/10 flex items-center justify-center mb-5 group-hover:bg-[#FD5F18]/20 transition-colors">
+            <svg class="w-7 h-7 text-[#FD5F18]" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+          </div>
+          <h3 class="cr-heading-md text-[#292929] mb-3">Reliability</h3>
+          <p class="cr-body text-[#555]">Reliability is at the core of our values. We understand that trust is earned through consistent performance and dependability.</p>
+        </div>
+
+        <!-- Communication -->
+        <div class="bg-white rounded-2xl p-8 shadow-sm border-t-4 border-[#FD5F18] group hover:shadow-md transition-shadow">
+          <div class="w-14 h-14 rounded-2xl bg-[#FD5F18]/10 flex items-center justify-center mb-5 group-hover:bg-[#FD5F18]/20 transition-colors">
+            <svg class="w-7 h-7 text-[#FD5F18]" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+            </svg>
+          </div>
+          <h3 class="cr-heading-md text-[#292929] mb-3">Communication</h3>
+          <p class="cr-body text-[#555]">Effective communication is the bedrock of successful collaboration. We prioritize open communication channels from project initiation to delivery.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Coderuns -->
+  <AdvantagesSection
+    client:load
+    heading="Why Coderuns"
+    items={whyCoderuns}
+    highlight={1}
+  />
+</Layout>

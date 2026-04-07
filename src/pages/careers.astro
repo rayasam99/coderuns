@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import CareersForm from '../components/CareersForm.tsx';
+---
+
+<Layout title="Careers" description="Join the Coderuns team — explore career opportunities.">
+  <PageHero title="Careers" bg="/All-Inner-pages-BG.jpg" />
+
+  <!-- Intro -->
+  <section class="py-16 bg-white text-center">
+    <div class="max-w-325 mx-auto px-6">
+      <span class="cr-eyebrow mb-4 inline-flex">Vacancy / Career</span>
+      <h2 class="cr-heading-lg text-[#292929] mt-4 mb-3">
+        Join <span class="text-[#FD5F18]">Our Team!</span>
+      </h2>
+      <p class="cr-body text-[#555] max-w-xl mx-auto">
+        Explore exciting opportunities and become a valuable part of our innovative and dynamic team
+      </p>
+    </div>
+  </section>
+
+  <CareersForm client:load />
+</Layout>

@@ -1,0 +1,84 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import AdvantagesSection from '../../components/AdvantagesSection.tsx';
+
+const services = [
+  { title: 'Digital Transformation Strategy and', highlight: 'Consultation', desc: 'Our Digital Transformation Consulting services help you embrace the digital era, enabling innovative strategies that drive growth and agility. We work closely with your organization to assess, strategize, and implement digital initiatives, ensuring a seamless transition into the future.' },
+  { title: 'IT Planning and', highlight: 'Advisory Services', desc: 'Our IT Strategy and Planning/Consultation services provide a clear path for your technology investments. We create bespoke IT strategies, aligning them with your business objectives to optimize performance and long-term success.' },
+  { title: 'IT Infrastructure', highlight: 'Assessment', desc: 'Our IT Infrastructure Assessment evaluates your existing IT setup to identify areas for improvement. We offer data-driven insights to optimize your infrastructure, enhance performance, and reduce operational costs.' },
+  { title: 'IT Infrastructure', highlight: 'Management Solutions', desc: 'Our IT Infrastructure Management services ensure your IT environment remains secure, reliable, and optimized for performance. We provide ongoing support and proactive management to keep your systems running smoothly.' },
+  { title: 'IT Project Management and', highlight: 'Implementation Services', desc: 'We take the complexity out of IT project management and implementation. From planning to execution, we ensure that your technology initiatives are delivered on time, within budget, and according to your specifications.' },
+  { title: 'IT Product Management', highlight: 'Consultancy', desc: 'Our IT Product Management Consulting services help you develop and manage digital products with a customer-centric approach. We offer guidance on product strategies, development, and optimization to maximize your product\'s potential.' },
+  { title: 'Security Risk Assessment and', highlight: 'Mitigation', desc: 'Our Security Risk Assessment services evaluate your organization\'s vulnerabilities and create a roadmap for enhanced security. We identify potential threats and provide solutions to safeguard your digital assets.' },
+  { title: 'Technology Consultation', highlight: 'Services', desc: 'Our Technology Consultation services provide expert guidance on emerging technologies and trends. Stay ahead of the curve with our insights on how to leverage technology for a competitive advantage.' },
+  { title: 'Application Support and', highlight: 'Maintenance', desc: 'Our Application Support services ensure the smooth operation of your business-critical applications. We offer round-the-clock assistance to resolve issues and minimize downtime, keeping your applications running at their best.' },
+  { title: 'Our IT Consulting', highlight: 'Technologies', desc: '', bullets: ['Data Science', 'Blockchain', 'Cloud Computing', 'Internet of Things', 'Computer Vision', 'VR', 'AI', 'Big Data', 'Cyber security', 'AR'] },
+];
+
+const advantages = [
+  { title: 'Seasoned IT Consulting Excellence', desc: 'With a wealth of experience, our IT consulting team brings a deep understanding of industry trends and best practices to deliver expert guidance and solutions.' },
+  { title: 'Dedicated to Uncovering Optimal Solutions', desc: 'We commit ourselves to identifying and implementing the best possible solutions for your unique business challenges, ensuring that your technology investments align with your goals.' },
+  { title: 'Masterful Issue Resolution', desc: 'Our skilled team excels in swiftly and effectively resolving a wide range of IT issues, minimizing disruptions and keeping your operations running smoothly.' },
+  { title: 'Empowering In-Depth Diagnostic Insights', desc: 'We empower your organization with thorough diagnostics, offering detailed insights into your IT infrastructure, security, and performance to enhance decision-making and strategy.' },
+  { title: 'Proficient Expert Evaluations', desc: 'Our experts provide comprehensive assessments and evaluations of your IT systems, ensuring that you receive informed and actionable recommendations for improvement.' },
+  { title: 'Tailored Solutions Craftsmanship', desc: 'We specialize in crafting customized solutions that perfectly align with your organization\'s needs, leveraging our expertise to drive efficiency and effectiveness in your technology infrastructure.' },
+];
+---
+
+<Layout title="IT Consulting" description="Information Technology Consulting Services by Coderuns.">
+  <PageHero title="IT Consulting Services" bg="/All-Inner-pages-BG.jpg" />
+
+  <!-- Intro -->
+  <section class="py-14 lg:py-20 bg-white">
+    <div class="max-w-325 mx-auto px-6">
+      <div class="flex flex-col lg:flex-row gap-7 lg:gap-12 items-start">
+        <div class="lg:w-5/12">
+          <span class="cr-eyebrow mb-4 inline-flex">Information Technology</span>
+          <h2 class="cr-heading-lg text-[#292929] mt-4">
+            Information Technology
+            <br /><span class="text-[#FD5F18]">Consulting Services</span>
+          </h2>
+        </div>
+        <div class="lg:w-7/12">
+          <p class="cr-body text-[#555] mb-4">Coderuns is your trusted partner in ensuring the seamless digital transformation of your organization. We specialize in orchestrating efficient initiatives that drive your business toward its ultimate goals. By harnessing the latest information technologies, our team of seasoned IT consultants delivers innovative solutions, enabling you to achieve your business objectives with the utmost efficiency and productivity.</p>
+          <p class="cr-body text-[#555]">In today's rapidly evolving landscape, a strategic approach to technology is essential. Our IT consulting services are tailored to your unique needs, helping you navigate the complex digital terrain with confidence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section class="py-20 bg-[#f9f9f9]">
+    <div class="max-w-325 mx-auto px-6">
+      <h2 class="cr-heading-lg text-[#292929] text-center mb-3">
+        The IT Consulting Services <span class="text-[#FD5F18]">Provided by</span>
+        <br /><span class="text-[#FD5F18]">Coderuns</span>
+      </h2>
+      <div class="w-12 h-0.5 bg-[#FD5F18] mx-auto mb-12"></div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {services.map((s) => (
+          <div class="bg-white border border-gray-100 rounded-2xl p-7 shadow-sm">
+            <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-[#555]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2v-4M9 21H5a2 2 0 01-2-2v-4m0 0h18"/></svg>
+            </div>
+            <h3 class="cr-list-item text-[#292929] mb-2">{s.title} <span class="text-[#FD5F18]">{s.highlight}</span></h3>
+            {s.desc && <p class="cr-body text-[#555]">{s.desc}</p>}
+            {s.bullets && (
+              <div class="grid grid-cols-2 gap-1 mt-2">
+                {s.bullets.map((b) => (
+                  <span class="flex items-center gap-1 cr-body text-[#555] text-[13px]">
+                    <svg class="w-3 h-3 text-[#FD5F18] shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                    {b}
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <AdvantagesSection client:load heading="Key Attributes of Coderuns, Your IT Consulting Partner, and Their Benefits" items={advantages} highlight={1} />
+</Layout>

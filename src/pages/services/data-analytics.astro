@@ -1,0 +1,97 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import AdvantagesSection from '../../components/AdvantagesSection.tsx';
+
+const proficiencies = [
+  { title: 'Data', highlight: 'Discovery', desc: 'Gain a deep understanding of your entire data landscape with our thorough data discovery workshop. This workshop is designed to help you assess your current data environment, align your analytical requirements, and receive tailored data analytics solutions.' },
+  { title: 'Data', highlight: 'Management', desc: 'Efficiently manage the complete data lifecycle, which includes data cleaning, data architecture, metadata management, and the establishment of data warehouses, data lakes, or robust big data architectures, all crucial elements for sound business decision-making.' },
+  { title: 'Business', highlight: 'Intelligence', desc: 'Leverage the full potential of your data through robust Business Intelligence solutions that facilitate informed decision-making and streamline repetitive tasks such as daily reports, status emails, and other routine activities.' },
+  { title: 'Data', highlight: 'Science', desc: 'Delve into a wealth of structured, unstructured, and semi-structured data to gain deeper insights for applications such as supply chain analytics, trade promotion, predictive analytics, forecasting, classification, and more.' },
+];
+
+const serviceList = ['Data Transformation', 'Optimizing Pricing', 'Visualizing Data', 'Advanced Manufacturing Analytics', 'Supply Chain Analysis', 'Business Intelligence Implementation', 'Procurement Insights', 'Workforce Automation'];
+
+const advantages = [
+  { title: 'Time-to-Market Accelerators', desc: 'We help you launch your products or services faster, so you can keep up with the fast business world.' },
+  { title: 'Proven Expertise and Experience', desc: 'We have a lot of knowledge and experience to make sure your projects succeed.' },
+  { title: 'Cloud-Native and On-Premises Solutions', desc: 'We use the best technology solutions to match your needs, whether you want something flexible or more control.' },
+  { title: 'Strong Partner Network', desc: 'We work with strong partners to offer you a complete set of services for your business from one place.' },
+];
+---
+
+<Layout title="Data Analytics" description="Unlock the Value of Your True Data with Coderuns.">
+  <PageHero title="Data Analytics" bg="/All-Inner-pages-BG.jpg" />
+
+  <!-- Intro -->
+  <section class="py-14 lg:py-20 bg-white">
+    <div class="max-w-325 mx-auto px-6">
+      <div class="flex flex-col lg:flex-row gap-7 lg:gap-12 items-start">
+        <div class="lg:w-5/12">
+          <span class="cr-eyebrow mb-4 inline-flex">Data Analytics</span>
+          <h2 class="cr-heading-lg text-[#292929] mt-4">
+            Unlock the Value of <span class="text-[#FD5F18]">Your</span>
+            <br /><span class="text-[#FD5F18]">True Data</span>
+          </h2>
+        </div>
+        <div class="lg:w-7/12">
+          <p class="cr-body text-[#555] mb-4">Data lies at the heart of every modern digital enterprise. It's all about using data insights, both historical and real-time, effectively for smart decision-making and creating new, value-added services.</p>
+          <p class="cr-body text-[#555] mb-4">With Coderuns Solutions as your Data Analytics Service Provider, we offer custom solutions to help you discover hidden opportunities and prepare for the future.</p>
+          <p class="cr-body text-[#555]">Our team of data analytics experts specializes in creating end-to-end data and analytics strategies that meet your enterprise's specific needs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proficiency Grid -->
+  <section class="py-20 bg-[#f9f9f9]">
+    <div class="max-w-325 mx-auto px-6">
+      <h2 class="cr-heading-lg text-[#292929] text-center mb-3">
+        Our Proficiency in <span class="text-[#FD5F18]">Data Analytics Services</span>
+      </h2>
+      <div class="w-12 h-0.5 bg-[#FD5F18] mx-auto mb-12"></div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {proficiencies.map((p) => (
+          <div class="bg-white border border-gray-100 rounded-2xl p-7 shadow-sm">
+            <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-[#555]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg>
+            </div>
+            <h3 class="cr-list-item text-[#292929] mb-2">{p.title} <span class="text-[#FD5F18]">{p.highlight}</span></h3>
+            <p class="cr-body text-[#555]">{p.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Service List Dark -->
+  <section class="py-14 lg:py-20 bg-[#1a1a1a]">
+    <div class="max-w-325 mx-auto px-6">
+      <div class="flex flex-col lg:flex-row gap-7 lg:gap-12 items-center">
+        <div class="lg:w-6/12">
+          <span class="cr-eyebrow mb-4 inline-flex" style="background-color:#2a2a2a; border-color:#3a3a3a; color:#fff;">Service List</span>
+          <h2 class="cr-heading-lg mt-4 mb-3">
+            <span class="text-[#FD5F18]">Our Data Analytics</span>
+            <br /><span class="text-[#FD5F18]">Services for</span>
+            <br /><span class="text-white">Realizing Your Data's</span>
+            <br /><span class="text-white">Full Potential</span>
+          </h2>
+          <p class="cr-body text-white/70 mb-6">A solid data and analytics strategy is the cornerstone of successful business transformation. Partner with Coderuns Solutions to lay the foundation for reliable and forward-thinking practices.</p>
+          <ul class="grid grid-cols-2 gap-y-2 gap-x-6">
+            {serviceList.map((s) => (
+              <li class="flex items-center gap-2 cr-list-item text-white/80">
+                <svg class="w-3.5 h-3.5 text-[#FD5F18] shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                {s}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="lg:w-6/12 rounded-2xl overflow-hidden bg-gray-700 min-h-72">
+          <img src="/images/data-analytics-work.jpg" alt="Data Analytics" class="w-full h-full object-cover" onerror="this.parentElement.style.background='#374151'" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <AdvantagesSection client:load heading="Advantages of Coderuns" items={advantages} highlight={1} />
+</Layout>

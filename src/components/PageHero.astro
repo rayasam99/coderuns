@@ -1,0 +1,17 @@
+---
+interface Props {
+  title: string;
+  bg?: string;
+}
+const { title, bg = '/home/code-Runs-Hero-Img.jpg' } = Astro.props;
+---
+
+<section class="relative w-full min-h-[28rem] flex items-center justify-center overflow-hidden px-6 pt-[2rem] pb-[2rem]">
+  <div class="absolute inset-0 z-0">
+    <img src={bg} alt={title} class="w-full h-full object-cover object-center" />
+    <div class="absolute inset-0 bg-[#292929]/75" />
+  </div>
+  <div class="relative z-10 text-center max-w-4xl">
+    <h1 class="cr-heading-xl text-white">{title}</h1>
+  </div>
+</section>

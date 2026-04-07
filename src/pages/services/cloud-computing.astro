@@ -1,0 +1,75 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import AdvantagesSection from '../../components/AdvantagesSection.tsx';
+
+const clouds = [
+  { title: 'AWS', highlight: 'Cloud Services', desc: 'At Coderuns, we are dedicated to helping businesses unlock the full potential of Amazon Web Services (AWS). As an experienced and trusted AWS services provider, we offer a comprehensive suite of solutions tailored to meet the unique needs of organizations across various industries.', bullets: ['AWS Cloud Migration', 'Application Development on the AWS Platform', 'AWS Infrastructure Optimization', 'Security and Compliance'] },
+  { title: 'Microsoft Azure', highlight: 'Services', desc: 'At Coderuns, we are dedicated to helping businesses leverage the full potential of Microsoft Azure. As an experienced and trusted Microsoft Azure services provider, we are committed to assisting organizations in their digital transformation journey by harnessing the power of Azure.', bullets: ['Azure Cloud Migration', 'Application Development on Azure', 'Azure Infrastructure Optimization', 'Security and Compliance'] },
+  { title: 'Google Cloud', highlight: 'Services', desc: 'At Coderuns, we are committed to helping businesses harness the full capabilities of Google Cloud, a leading cloud platform that offers a broad range of services and solutions. As a seasoned and trusted Google Cloud services provider, we specialize in assisting organizations in their digital transformation journey by leveraging the power of Google Cloud.', bullets: ['Google Cloud Migration', 'Application Development on Google Cloud', 'Google Cloud Infrastructure Optimization', 'Security and Compliance'] },
+  { title: 'Digital Ocean Cloud', highlight: 'Services', desc: 'At Coderuns, we are dedicated to helping businesses make the most of DigitalOcean, a renowned cloud infrastructure provider known for its simplicity and developer-friendly approach. As a trusted DigitalOcean services provider, we specialize in assisting organizations on their journey to the cloud.', bullets: ['Digital Ocean Droplets', 'Managed Kubernetes', 'Block Storage and Object Storage', 'Load Balancers', 'Security and Compliance'] },
+];
+
+const advantages = [
+  { title: 'Save on Migration Costs', desc: 'Ensure a cost-effective transition to the cloud, allowing your business to reallocate resources more efficiently.' },
+  { title: 'Cloud Costs Optimization', desc: 'Optimize your monthly cloud expenses, helping you maintain a budget-friendly and sustainable cloud infrastructure.' },
+  { title: 'Develop Faster', desc: 'Speed up application development processes, enabling your team to achieve time-to-market and competitive advantages.' },
+  { title: 'Trust in Reliability', desc: 'Rely on the high availability and consistency of your cloud services, reducing downtime and business disruptions.' },
+  { title: 'Improve Security', desc: 'Enhance data and system security with comprehensive measures, safeguarding your critical information.' },
+  { title: 'Get Guaranteed Quality', desc: 'Receive assurance of top-quality services, ensuring that your cloud solutions meet the highest standards of performance and reliability.' },
+];
+---
+
+<Layout title="Cloud Computing" description="Cloud Computing Services by Coderuns.">
+  <PageHero title="Cloud Computing Services" bg="/All-Inner-pages-BG.jpg" />
+
+  <!-- Intro -->
+  <section class="py-14 lg:py-20 bg-white">
+    <div class="max-w-325 mx-auto px-6">
+      <div class="flex flex-col lg:flex-row gap-7 lg:gap-12 items-start">
+        <div class="lg:w-5/12">
+          <span class="cr-eyebrow mb-4 inline-flex">Cloud Computing Services</span>
+          <h2 class="cr-heading-lg text-[#292929] mt-4">
+            Cloud <span class="text-[#FD5F18]">Computing Services</span>
+          </h2>
+        </div>
+        <div class="lg:w-7/12">
+          <p class="cr-body text-[#555] mb-4">Coderuns Cloud Consulting offers a comprehensive solution for harnessing cloud technology to drive innovation and achieve scalable growth, all while ensuring the highest return on investment. Our dedicated team assists you in navigating complex challenges, mitigating risks, minimizing downtime, and optimizing financial resources.</p>
+          <p class="cr-body text-[#555]">Our goal is to enable you to fully leverage the vast potential of the cloud with confidence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cloud Solutions -->
+  <section class="py-20 bg-[#f9f9f9]">
+    <div class="max-w-325 mx-auto px-6">
+      <h2 class="cr-heading-lg text-[#292929] text-center mb-3">
+        Clouds Solutions <span class="text-[#FD5F18]">We Work With</span>
+      </h2>
+      <div class="w-12 h-0.5 bg-[#FD5F18] mx-auto mb-12"></div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {clouds.map((c, i) => (
+          <div class="bg-white border border-gray-100 rounded-2xl p-7 shadow-sm">
+            <div class={`w-12 h-12 rounded-full flex items-center justify-center mb-4 ${i === 0 || i === 3 ? 'bg-gray-200' : 'bg-[#FD5F18]'}`}>
+              <svg class={`w-6 h-6 ${i === 0 || i === 3 ? 'text-[#555]' : 'text-white'}`} fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+            </div>
+            <h3 class="cr-list-item text-[#292929] mb-1">{c.title} <span class="text-[#FD5F18]">{c.highlight}</span></h3>
+            <p class="cr-body text-[#555] mb-4">{c.desc}</p>
+            <p class="cr-list-item text-[#FD5F18] mb-2">Key {c.title} Services We Offer</p>
+            <ul class="flex flex-col gap-1">
+              {c.bullets.map((b) => (
+                <li class="flex items-center gap-2 cr-body text-[#555] text-[14px]">
+                  <svg class="w-3.5 h-3.5 text-[#FD5F18] shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  {b}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <AdvantagesSection client:load heading="Advantages of Cloud Consulting Services Provided by Coderuns" items={advantages} highlight={1} />
+</Layout>

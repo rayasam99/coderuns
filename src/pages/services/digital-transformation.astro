@@ -1,0 +1,78 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import AdvantagesSection from '../../components/AdvantagesSection.tsx';
+
+const services = [
+  { title: 'Web Development', highlight: 'Solutions', desc: 'Create outstanding, tailored solutions to cater to your business requirements through Coderuns\' web development services. Our team offers cutting-edge web development services that is helping the creation of top-tier software and web solutions.', bullets: ['Full-stack Web Development Service', 'E-commerce Websites and Software', 'Custom Web Applications', 'Content Management Systems', 'QA and Testing', 'Web Support and Maintenance'] },
+  { title: 'Mobile App', highlight: 'Solutions', desc: 'Elevate your business with our mobile app development services, designed to deliver exceptional mobile applications tailored to your specific needs. Coderuns is a seasoned mobile app development company.', bullets: ['Mobile App Development', 'Mobile UX/UI Design', 'Third-party Integrations', 'QA and Testing', 'Support and Maintenance'] },
+  { title: 'Data-Driven Analytics Blueprint for', highlight: 'Digital Transformation', desc: 'Our consulting service is dedicated to creating a comprehensive plan for leveraging analytics to drive digital transformation. By conducting a thorough analysis of critical business processes, we identify opportunities for harnessing analytics to digitally revolutionize them.', bullets: ['Streamline Business Operations', 'Enhanced Customer Understanding', 'Stay Ahead of the Competition', 'Improved Collaboration'] },
+  { title: 'Empower', highlight: 'Software Development', desc: 'To achieve digital transformation, organizations need to update their technology and application infrastructure. This software can automate processes, improve customer experiences, and create new ways to make money. With the ongoing wave of digital transformation, organizations worldwide are recognizing the significance of technology.', bullets: [] },
+  { title: 'Cloud', highlight: 'Integration', desc: 'Our service is centered on the integration of analytical environments to the Cloud. This gives improved scalability, reduced costs, and heightened agility as the primary benefits. Through our strategic partnerships with leading Cloud providers, we empower organizations in the following ways:', bullets: ['Rapid Deployment', 'Scalability', 'Data Empowerment'] },
+  { title: 'Coderuns Robotic Process Automation (RPA) &', highlight: 'IPA Solution', desc: 'Our Robotic Process Automation (RPA) solution is designed to streamline and automate repetitive, manual, and rule-based tasks, yielding notable improvements in efficiency, accuracy, and cost reduction.', bullets: ['Enhanced Speed and Efficiency', 'Reduced Error Rate', 'Increased Operational Efficiency', 'Cost Savings', 'Automation Deployment'] },
+];
+
+const advantages = [
+  { title: 'Expertise in Emerging Technologies', desc: 'Coderuns excels in leveraging cutting-edge technologies, including AI, cloud computing, and automation, to create innovative solutions that drive business growth.' },
+  { title: 'Tailored Solutions', desc: 'The company specializes in developing customized software and applications to address the unique needs of each client, ensuring that solutions are a perfect fit for their specific requirements.' },
+  { title: 'Strategic Partnerships', desc: 'Coderuns maintains strategic partnerships with leading cloud providers and technology companies, enabling them to deliver robust and scalable solutions to their clients.' },
+  { title: 'Data-Driven Approach', desc: 'With a focus on data analytics and insights, Coderuns helps organizations make informed decisions and harness the power of data to drive innovation.' },
+  { title: 'Cost Savings', desc: 'By automating tasks and processes, Coderuns assists in reducing labor costs, improving operational efficiency, and generating cost savings for its clients.' },
+  { title: 'Customer-Centric Approach', desc: 'Coderuns prioritizes understanding and meeting the needs of its clients, aiming to provide personalized and satisfying customer experiences.' },
+];
+---
+
+<Layout title="Digital Transformation" description="End-to-End Digital Transformation Services by Coderuns.">
+  <PageHero title="Digital Transformation" bg="/All-Inner-pages-BG.jpg" />
+
+  <!-- Intro -->
+  <section class="py-14 lg:py-20 bg-white">
+    <div class="max-w-325 mx-auto px-6">
+      <div class="flex flex-col lg:flex-row gap-7 lg:gap-12 items-start">
+        <div class="lg:w-5/12">
+          <span class="cr-eyebrow mb-4 inline-flex">Digital Transformation</span>
+          <h2 class="cr-heading-lg text-[#292929] mt-4">
+            End-to-End <span class="text-[#FD5F18]">Digital</span>
+            <br /><span class="text-[#FD5F18]">Transformation</span> Services
+          </h2>
+        </div>
+        <div class="lg:w-7/12">
+          <p class="cr-body text-[#555] mb-4">Digital transformation is centered on the fulfilment of increasingly high customer expectations for convenience and user-friendliness through the adoption of a variety of digital technologies. Including but not limited to the Metaverse, mobile devices, social media, the internet of things, and cloud computing.</p>
+          <p class="cr-body text-[#555] mb-4">The advantages of digital transformation are manifold, encompassing enhanced customer experiences, heightened efficiency, and increased productivity, ultimately leading to a more agile and adaptable organization.</p>
+          <p class="cr-body text-[#555]">At Coderuns, our digital transformation services are applicable to a diverse array of industries and business functions. We collaborate closely with our clients to gain a deep understanding of their business objectives and provide solutions that empower them to grow them.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section class="py-20 bg-[#f9f9f9]">
+    <div class="max-w-325 mx-auto px-6">
+      <h2 class="cr-heading-lg text-[#292929] text-center mb-3">Digital Transformation<span class="text-[#FD5F18]">Services</span></h2>
+      <div class="w-12 h-0.5 bg-[#FD5F18] mx-auto mb-12"></div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {services.map((s) => (
+          <div class="bg-white border border-gray-100 rounded-2xl p-7 shadow-sm">
+            <div class="w-12 h-12 rounded-full bg-[#FD5F18]/10 flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-[#FD5F18]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <h3 class="cr-list-item text-[#292929] mb-3">{s.title} <span class="text-[#FD5F18]">{s.highlight}</span></h3>
+            <p class="cr-body text-[#555] mb-3">{s.desc}</p>
+            {s.bullets.length > 0 && (
+              <ul class="flex flex-col gap-1">
+                {s.bullets.map((b) => (
+                  <li class="flex items-center gap-2 cr-body text-[#555] text-[14px]">
+                    <svg class="w-3.5 h-3.5 text-[#FD5F18] shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                    {b}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <AdvantagesSection client:load heading="Advantages of Coderuns" items={advantages} highlight={1} />
+</Layout>

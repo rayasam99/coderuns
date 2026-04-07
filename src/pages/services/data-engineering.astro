@@ -1,0 +1,108 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import AdvantagesSection from '../../components/AdvantagesSection.tsx';
+
+const challenges = [
+  { title: 'Diverse Data', desc: 'Organizations have many different types of data, making it harder to manage and use effectively.' },
+  { title: 'Data Sources', desc: 'Data comes from various places, making it difficult to bring it all together.' },
+  { title: 'Inconsistent Storage and Access', desc: 'Organizations use different methods to store and access data, leading to confusion and inefficiency.' },
+  { title: 'Large Data Volumes', desc: 'The sheer amount of data can be overwhelming and difficult to handle.' },
+  { title: 'Access Speed', desc: 'It\'s often tricky to access data quickly and consistently, making real-time decisions challenging.' },
+  { title: 'Complex Data Types', desc: 'Older technology and high costs can limit the handling of different types of data.' },
+];
+
+const mainServices = [
+  { title: 'Data Management Development and', highlight: 'Enhancement', desc: 'The process of transitioning data to a Cloud Data Lake or Lake House is a collaborative journey that begins with modest steps and expands as it attains specific business goals at each stage. We offer our expertise to efficiently guide you in implementing and scaling a robust Data Management Architecture that is ready for the future.' },
+  { title: '', highlight: 'DataOps', desc: 'Data is now a shared asset. With more people creating data and more people using it, it\'s crucial to improve the speed and flexibility of complete data pipelines. Our DataOps consulting and strategic services encompass the deployment of streamlined processes, frameworks, and adapt testing tools to facilitate the swift progression of data throughout the pipeline, ensuring a seamless transformation.' },
+  { title: 'Data', highlight: 'Governance', desc: 'Good data governance ensures that the right people have access to high-quality data. It\'s becoming more important as businesses rely on data analytics to improve their operations and make informed decisions. Nowadays, data governance is a requirement, whereas if used to be optional. It\'s a crucial part of a company\'s digital transformation and should be a top priority. Reach out to Coderuns to learn how to keep your data reliable at every step.' },
+  { title: 'Data Warehouse', highlight: 'Modernization', desc: 'Organizations relying on conventional data warehouses often find themselves constrained by outdated architectures that struggle to accommodate the diverse data formats, immense data volumes, and the dynamic demands of today\'s fast-paced data landscape. Data warehouse modernization involves a comprehensive architectural overhaul, capable of effectively addressing the challenges and prerequisites of contemporary data management.' },
+];
+
+const advantages = [
+  { title: 'Time-to-Market Accelerators', desc: 'We help you launch your products or services faster, so you can keep up with the fast business world.' },
+  { title: 'Proven Expertise and Experience', desc: 'We have a lot of knowledge and experience to make sure your projects succeed.' },
+  { title: 'Cloud-Native and On-Premises Solutions', desc: 'We use the best technology solutions to match your needs, whether you want something flexible (cloud-native) or want more control (on-premises).' },
+  { title: 'Strong Partner Network', desc: 'We work with strong partners to offer you a complete set of services. This means you get everything you need for your business from one place.' },
+];
+---
+
+<Layout title="Data Engineering" description="Advanced Data Management Platform Solutions by Coderuns.">
+  <PageHero title="Data Engineering" bg="/All-Inner-pages-BG.jpg" />
+
+  <!-- Intro -->
+  <section class="py-14 lg:py-20 bg-white">
+    <div class="max-w-325 mx-auto px-6">
+      <div class="flex flex-col lg:flex-row gap-7 lg:gap-12 items-start">
+        <div class="lg:w-5/12">
+          <span class="cr-eyebrow mb-4 inline-flex">Data Engineering</span>
+          <h2 class="cr-heading-lg text-[#292929] mt-4">
+            Advanced-Data <span class="text-[#FD5F18]">Management</span>
+            <br /><span class="text-[#FD5F18]">Platform</span> Solutions
+          </h2>
+        </div>
+        <div class="lg:w-7/12">
+          <p class="cr-body text-[#555] mb-4">In today's data-driven world, organizations deal with a lot of data, but they often struggle to use it effectively. This happens because data comes from various sources, both inside and outside the organization, and combining all of it can provide valuable insights to improve business performance.</p>
+          <p class="cr-body font-semibold text-[#292929]">However, many businesses face challenges in realizing the value of their data. These challenges include:</p>
+        </div>
+      </div>
+
+      <!-- Challenges Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
+        {challenges.map((c) => (
+          <div class="border border-gray-100 rounded-2xl p-6 flex items-start gap-3 shadow-sm">
+            <div class="w-9 h-9 rounded-full bg-[#FD5F18]/10 flex items-center justify-center shrink-0">
+              <svg class="w-4 h-4 text-[#FD5F18]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <div>
+              <h3 class="cr-list-item text-[#292929] mb-1">{c.title}</h3>
+              <p class="cr-body text-[#555] text-[13px]">{c.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Do -->
+  <section class="py-14 lg:py-20 bg-[#1a1a1a]">
+    <div class="max-w-325 mx-auto px-6">
+      <div class="flex flex-col lg:flex-row gap-7 lg:gap-12 items-center">
+        <div class="lg:w-6/12">
+          <span class="cr-eyebrow mb-4 inline-flex" style="background-color:#2a2a2a; border-color:#3a3a3a; color:#fff;">Service List</span>
+          <h2 class="cr-heading-lg text-[#FD5F18] mt-4 mb-3">What We <span class="text-white">Do</span></h2>
+          <p class="cr-body text-white/70 mb-3">At Coderuns, we focus on helping businesses use data to make better decisions, ultimately increasing their value. Our team of Data Engineers specializes in creating powerful Data Management Architectures that provide organized and efficient access to data when it's needed.</p>
+          <p class="cr-body text-white/70">Our goal is to support organizations in making data-driven decisions and achieving success in their operations. This means that insights from data can automate decisions and be integrated into everyday business processes. We also assist organizations in building effective data storage systems using modern cloud-based concepts like Data Lakes, Data Fabrics, Data Mesh, and Lake houses.</p>
+        </div>
+        <div class="lg:w-6/12 rounded-2xl overflow-hidden bg-gray-700 min-h-72">
+          <img src="/images/data-engineering-work.jpg" alt="Data Engineering" class="w-full h-full object-cover" onerror="this.parentElement.style.background='#374151'" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Services -->
+  <section class="py-20 bg-white">
+    <div class="max-w-325 mx-auto px-6">
+      <h2 class="cr-heading-lg text-[#292929] text-center mb-3">
+        Here are some of the main services that Coderuns
+        <br />provides as part of our
+        <br /><span class="text-[#FD5F18]">Data Engineering offerings</span>
+      </h2>
+      <div class="w-12 h-0.5 bg-[#FD5F18] mx-auto mb-12"></div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {mainServices.map((s) => (
+          <div class="border border-gray-100 rounded-2xl p-7 shadow-sm">
+            <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-[#555]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg>
+            </div>
+            <h3 class="cr-list-item text-[#292929] mb-2">{s.title} <span class="text-[#FD5F18]">{s.highlight}</span></h3>
+            <p class="cr-body text-[#555]">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <AdvantagesSection client:load heading="Advantages of Coderuns" items={advantages} highlight={1} />
+</Layout>

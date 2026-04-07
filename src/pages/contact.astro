@@ -1,0 +1,85 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import ContactForm from '../components/ContactForm.tsx';
+---
+
+<Layout title="Contact Us" description="Get in touch with the Coderuns team.">
+  <PageHero title="Contact Us" bg="/All-Inner-pages-BG.jpg" />
+
+  <!-- Info Cards -->
+  <section class="py-16 bg-white">
+    <div class="max-w-325 mx-auto px-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Location -->
+        <div class="border border-gray-100 rounded-2xl p-6 flex items-start gap-4 shadow-sm">
+          <div class="w-10 h-10 rounded-full bg-[#FD5F18]/10 flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5 text-[#FD5F18]" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+          </div>
+          <div>
+            <p class="font-['Poppins'] text-[11px] font-600 text-[#FD5F18] uppercase tracking-wider mb-1">Location.</p>
+            <p class="cr-list-item text-[#292929] mb-1">Visit Us At</p>
+            <p class="cr-body text-[#555] text-[13px]">CodeRuns LLC<br/>1580 Sawgrass Corporate Pkwy,<br/>Suite 130 Sunrise, FL 33323</p>
+          </div>
+        </div>
+        <!-- Phone -->
+        <div class="border border-gray-100 rounded-2xl p-6 flex items-start gap-4 shadow-sm">
+          <div class="w-10 h-10 rounded-full bg-[#FD5F18]/10 flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5 text-[#FD5F18]" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.47 11.47 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.47 11.47 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z"/>
+            </svg>
+          </div>
+          <div>
+            <p class="font-['Poppins'] text-[11px] font-600 text-[#FD5F18] uppercase tracking-wider mb-1">24/7 Service.</p>
+            <p class="cr-list-item text-[#292929] mb-1">Call Us On</p>
+            <p class="cr-body text-[#555] text-[13px]">Tel : (305) 489-9346</p>
+          </div>
+        </div>
+        <!-- Email -->
+        <div class="border border-gray-100 rounded-2xl p-6 flex items-start gap-4 shadow-sm">
+          <div class="w-10 h-10 rounded-full bg-[#FD5F18]/10 flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5 text-[#FD5F18]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <div>
+            <p class="font-['Poppins'] text-[11px] font-600 text-[#FD5F18] uppercase tracking-wider mb-1">Drop a Line.</p>
+            <p class="cr-list-item text-[#292929] mb-1">Mail Address</p>
+            <p class="cr-body text-[#555] text-[13px]">sales@coderuns.com</p>
+          </div>
+        </div>
+        <!-- Hours -->
+        <div class="border border-gray-100 rounded-2xl p-6 flex items-start gap-4 shadow-sm">
+          <div class="w-10 h-10 rounded-full bg-[#FD5F18]/10 flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5 text-[#FD5F18]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <div>
+            <p class="font-['Poppins'] text-[11px] font-600 text-[#FD5F18] uppercase tracking-wider mb-1">Office Hours.</p>
+            <p class="cr-list-item text-[#292929] mb-1">Opening Time</p>
+            <p class="cr-body text-[#555] text-[13px]">Mon – Fri : 9am – 6pm<br/>Sunday (Closed)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form + Image -->
+  <ContactForm client:load />
+
+  <!-- Google Map -->
+  <section class="w-full h-105">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.7!2d-80.2541!3d26.1503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9a3!2sSawgrass+Corporate+Pkwy%2C+Sunrise%2C+FL+33323!5e0!3m2!1sen!2sus!4v1"
+      width="100%"
+      height="100%"
+      style="border:0;"
+      allowfullscreen
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </section>
+</Layout>

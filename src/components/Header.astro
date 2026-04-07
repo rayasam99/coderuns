@@ -1,0 +1,176 @@
+---
+---
+
+<header class="cr-header">
+  <div class="cr-header__inner">
+
+    <!-- Logo -->
+    <a href="/" class="cr-header__logo">
+      <img src="/Coderuns-PNG.png" alt="Code Runs Logo" height="60" />
+    </a>
+
+    <!-- Nav -->
+    <nav class="cr-header__nav">
+      <ul class="cr-header__nav-list">
+        <li><a href="/" class="cr-header__nav-link active">Home</a></li>
+        <li><a href="/about" class="cr-header__nav-link">About Us</a></li>
+        <li class="cr-header__nav-item--dropdown">
+          <a href="/services" class="cr-header__nav-link">
+            Services <span class="cr-header__dropdown-arrow">&#9660;</span>
+          </a>
+          <ul class="cr-header__dropdown">
+            <li><a href="/services/web">Web Development</a></li>
+            <li><a href="/services/mobile">Mobile Apps</a></li>
+            <li><a href="/services/consulting">Consulting</a></li>
+          </ul>
+        </li>
+        <li><a href="/careers" class="cr-header__nav-link">Careers</a></li>
+        <li><a href="/contact" class="cr-header__nav-link">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <!-- CTA -->
+    <a href="/contact" class="cr-btn">Let's Talk</a>
+
+    <!-- Mobile Hamburger -->
+    <button class="cr-header__hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+
+  </div>
+</header>
+
+<style>
+  .cr-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e8e8e8;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+  }
+
+  .cr-header__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+  }
+
+  /* Logo */
+  .cr-header__logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  .cr-header__logo img {
+    height: 60px;
+    width: auto;
+  }
+
+  /* Nav */
+  .cr-header__nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 36px;
+  }
+
+  .cr-header__nav-link {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #333333;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .cr-header__nav-link:hover,
+  .cr-header__nav-link.active {
+    color: #FD5F18;
+  }
+
+  .cr-header__dropdown-arrow {
+    font-size: 10px;
+  }
+
+  /* Dropdown */
+  .cr-header__nav-item--dropdown {
+    position: relative;
+    list-style: none;
+  }
+
+  .cr-header__dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 16px);
+    left: 0;
+    background: #ffffff;
+    border: 1px solid #e8e8e8;
+    border-radius: 8px;
+    padding: 8px 0;
+    min-width: 180px;
+    list-style: none;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  }
+
+  .cr-header__nav-item--dropdown:hover .cr-header__dropdown {
+    display: block;
+  }
+
+  .cr-header__dropdown li a {
+    display: block;
+    padding: 10px 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333333;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .cr-header__dropdown li a:hover {
+    color: #FD5F18;
+  }
+
+  /* Hamburger — hidden on desktop */
+  .cr-header__hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .cr-header__hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #333333;
+    border-radius: 2px;
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .cr-header__nav,
+    .cr-btn {
+      display: none;
+    }
+
+    .cr-header__hamburger {
+      display: flex;
+    }
+  }
+</style>

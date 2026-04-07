@@ -1,0 +1,94 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import AdvantagesSection from '../../components/AdvantagesSection.tsx';
+
+const mainServices = [
+  { title: 'Advanced-Data Modeling', highlight: 'Services', desc: 'Our array of data modeling services comprises Descriptive and Predictive Modeling, each designed to empower organizations with invaluable insights and data-driven decision-making.', bullets: ['Task Automation and Process Enhancement', 'Informed Decision-Making for Accurate Predictions and Forecasts', 'Efficient Analysis of Large and Complex Datasets'] },
+  { title: 'Data Analysis and Compelling Data', highlight: 'Narratives', desc: 'Our Data Analysis service comprises two vital components: the expertise in uncovering data patterns and trends through advanced techniques and tools, and the art of Data Storytelling.', bullets: ['Transforming enterprise data into actionable insights', 'Delivering information with the necessary context', 'Enhancing the significance and engagement of data', 'Making information more appealing and accessible', 'Providing a profound understanding of hidden opportunities within the data'] },
+  { title: 'Data Visualization and Informative', highlight: 'Dashboards', desc: 'Our Data Visualization and Dashboard service is all about presenting complex data in an easy-to-understand way through graphics. This makes it simple to spot patterns, trends, and connections.', bullets: ['Showing complex information and insights in a clear and straightforward manner, even to non-experts', 'Discovering factors that impact your business', 'Pinpointing areas that need improvement'] },
+  { title: 'Operationalizing', highlight: 'Analytics', desc: 'Analytics operationalization is all about turning ideas, especially those related to ML or AI predictive models, into practical solutions that use live data. This allows businesses to smoothly integrate big data analytics into their everyday operations.', bullets: ['Transforming enterprise data into actionable insights', 'Enhancing the significance and engagement of data', 'Get more out of analytics and big data investments'] },
+  { title: 'Big Data', highlight: 'Analytics', desc: 'Big data analytics involves examining vast and diverse data sets from various sources to empower better decision-making. This practice enables organizations and teams to enhance their products, services, and solutions.', bullets: ['Efficiently collect, store, and access vast quantities of unstructured data', 'Address the critical dimensions of data analysis: velocity, veracity, variety, and volume'] },
+];
+
+const advantages = [
+  { title: 'Tailored Industry Solutions', desc: 'We customize our solutions to fit your specific industry\'s requirements. This means we understand the challenges unique to your field and create services that align with industry standards.' },
+  { title: 'Proficiency in Big Data', desc: 'We are experts in handling and processing large and complex data. We know how to make sense of big data and use it to provide valuable insights for better decision-making.' },
+  { title: 'Assured Data Security', desc: 'We take data security seriously. Your data is safe with us, as we have strong measures in place to protect it from unauthorized access or breaches.' },
+];
+---
+
+<Layout title="Data Science & Analytics" description="AI and Machine Learning for Business Advancement by Coderuns.">
+  <PageHero title="Data Science & Analytics" bg="/All-Inner-pages-BG.jpg" />
+
+  <!-- Intro -->
+  <section class="py-14 lg:py-20 bg-white">
+    <div class="max-w-325 mx-auto px-6">
+      <div class="flex flex-col lg:flex-row gap-7 lg:gap-12 items-start">
+        <div class="lg:w-5/12">
+          <span class="cr-eyebrow mb-4 inline-flex">Data Science & Analytics</span>
+          <h2 class="cr-heading-lg text-[#292929] mt-4">
+            AI and Machine Learning <span class="text-[#FD5F18]">for</span>
+            <br /><span class="text-[#FD5F18]">Business Advancement</span>
+          </h2>
+        </div>
+        <div class="lg:w-7/12">
+          <p class="cr-body text-[#555] mb-4">In today's data-rich landscape, companies face the growing challenge of collecting, processing and understanding vast amounts of data to extract valuable insights. Utilizing data science and analytics, businesses can gain a competitive edge, foster innovation, and improve efficiency and profitability.</p>
+          <p class="cr-body text-[#555] mb-4">Our team of Data Scientists and Analysts specializes in creating methods to collect, process, and organize data to uncover actionable insights. We also focus on presenting this data through user-friendly dashboards and reports to help organizations make informed decisions, understand customer behavior, predict trends, and optimize business processes using Artificial Intelligence and Machine Learning solutions.</p>
+          <p class="cr-body text-[#555]">Data science and analytics are crucial in the modern business world. These solutions help make sense of historical data and use machine learning and predictive modeling to address complex business problems.</p>
+        </div>
+      </div>
+
+      <!-- Two feature cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-14">
+        <div class="border border-gray-100 rounded-2xl p-7 shadow-sm">
+          <div class="w-10 h-10 rounded-full bg-[#FD5F18]/10 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-[#FD5F18]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+          </div>
+          <h3 class="cr-heading-md text-[#FD5F18] mb-2">Get Better Business Insights with Data Analytics</h3>
+          <p class="cr-body text-[#555]">Our data analytics consultants focus on creating methods for data capture, processing and organization to reveal insights into current strategies. We also emphasize clear data presentation through dashboards, enabling businesses to better understand their issues through descriptive analytics.</p>
+        </div>
+        <div class="border border-gray-100 rounded-2xl p-7 shadow-sm">
+          <div class="w-10 h-10 rounded-full bg-[#292929] flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="cr-heading-md text-[#FD5F18] mb-2">Enhance Your Business with Data Science</h3>
+          <p class="cr-body text-[#555]">Coderuns' Data Scientists use AI, ML, and DL models to provide insights such as customer segmentation, market trends, predictive analytics, and prescriptive analytics. This helps businesses understand their customers and make data-driven decisions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Services -->
+  <section class="py-20 bg-[#f9f9f9]">
+    <div class="max-w-325 mx-auto px-6">
+      <h2 class="cr-heading-lg text-[#292929] text-center mb-3">
+        Here are some of the main services that Coderuns
+        <br />provides as part of our
+        <br /><span class="text-[#FD5F18]">Data Science & Analytics</span>
+      </h2>
+      <div class="w-12 h-0.5 bg-[#FD5F18] mx-auto mb-12"></div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {mainServices.map((s) => (
+          <div class="bg-white border border-gray-100 rounded-2xl p-7 shadow-sm">
+            <div class="w-12 h-12 rounded-full bg-[#FD5F18]/10 flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-[#FD5F18]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+            </div>
+            <h3 class="cr-list-item text-[#292929] mb-2">{s.title} <span class="text-[#FD5F18]">{s.highlight}</span></h3>
+            <p class="cr-body text-[#555] mb-3">{s.desc}</p>
+            <ul class="flex flex-col gap-1">
+              {s.bullets.map((b) => (
+                <li class="flex items-center gap-2 cr-body text-[#555] text-[14px]">
+                  <svg class="w-3.5 h-3.5 text-[#FD5F18] shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  {b}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <AdvantagesSection client:load heading="Advantages of Coderuns" items={advantages} highlight={1} />
+</Layout>

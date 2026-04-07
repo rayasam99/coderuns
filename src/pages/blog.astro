@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+---
+
+<Layout title="Blog" description="Read the latest news, insights and updates from Coderuns.">
+  <PageHero title="Blog & News" />
+
+  <!-- Blog Posts -->
+  <section class="py-20 bg-white">
+    <div class="max-w-325 mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Post 1 -->
+        <article class="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+          <div class="h-52 bg-gray-200 overflow-hidden">
+            <img src="/home/Mastering IT Consulting A Comprehensive Guide to IT Consultancy Services.jpg" alt="Mastering IT Consulting" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+          </div>
+          <div class="p-6">
+            <p class="cr-eyebrow text-[#FD5F18] mb-3" style="border:none;padding:0;background:none;font-size:12px;">March 2024</p>
+            <h3 class="cr-heading-md text-[#292929] mb-3 leading-snug group-hover:text-[#FD5F18] transition-colors">
+              <a href="/blog/mastering-it-consulting">Mastering IT Consulting: A Comprehensive Guide to IT Consultancy Services</a>
+            </h3>
+            <p class="cr-body text-[#777] mb-5 line-clamp-3">In the fast-paced world of technology, businesses are increasingly turning to IT consulting firms to navigate the complex landscape...</p>
+            <a href="/blog/mastering-it-consulting" class="cr-btn-outline text-sm">Read More</a>
+          </div>
+        </article>
+
+        <!-- Post 2 -->
+        <article class="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+          <div class="h-52 bg-gray-200 overflow-hidden">
+            <img src="/home/The Future of Cloud Computing in Enterprise Solutions.webp" alt="Cloud Computing Enterprise Solutions" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+          </div>
+          <div class="p-6">
+            <p class="cr-eyebrow text-[#FD5F18] mb-3" style="border:none;padding:0;background:none;font-size:12px;">February 2024</p>
+            <h3 class="cr-heading-md text-[#292929] mb-3 leading-snug group-hover:text-[#FD5F18] transition-colors">
+              <a href="/blog/cloud-computing-enterprise">The Future of Cloud Computing in Enterprise Solutions</a>
+            </h3>
+            <p class="cr-body text-[#777] mb-5 line-clamp-3">Cloud computing continues to reshape how enterprises operate, offering unprecedented scalability and cost efficiency...</p>
+            <a href="/blog/cloud-computing-enterprise" class="cr-btn-outline text-sm">Read More</a>
+          </div>
+        </article>
+
+        <!-- Post 3 -->
+        <article class="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+          <div class="h-52 bg-gray-200 overflow-hidden">
+            <img src="/home/Data Science  Analytics Turning Raw Data Into Business Insights.webp" alt="Data Science Analytics" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+          </div>
+          <div class="p-6">
+            <p class="cr-eyebrow text-[#FD5F18] mb-3" style="border:none;padding:0;background:none;font-size:12px;">January 2024</p>
+            <h3 class="cr-heading-md text-[#292929] mb-3 leading-snug group-hover:text-[#FD5F18] transition-colors">
+              <a href="/blog/data-science-analytics">Data Science & Analytics: Turning Raw Data Into Business Insights</a>
+            </h3>
+            <p class="cr-body text-[#777] mb-5 line-clamp-3">In today's data-driven world, organizations that harness the power of analytics gain a decisive competitive advantage...</p>
+            <a href="/blog/data-science-analytics" class="cr-btn-outline text-sm">Read More</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+</Layout>
