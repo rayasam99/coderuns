@@ -2,15 +2,49 @@ import { useState } from 'react';
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', company: '', message: '' });
+  const [status, setStatus] = useState<{ type: 'idle' | 'success' | 'error'; message: string }>({
+    type: 'idle',
+    message: '',
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Form submission logic will be wired later
-    console.log(form);
+    setIsSubmitting(true);
+    setStatus({ type: 'idle', message: '' });
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...form,
+          subject: 'Homepage contact form submission',
+        }),
+      });
+
+      const data = (await response.json()) as { error?: string; message?: string };
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Unable to send your message right now.');
+      }
+
+      setForm({ name: '', email: '', phone: '', company: '', message: '' });
+      setStatus({ type: 'success', message: data.message || 'Message sent successfully.' });
+    } catch (error) {
+      setStatus({
+        type: 'error',
+        message: error instanceof Error ? error.message : 'Unable to send your message right now.',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const inputClass = "w-full bg-white border border-gray-200 rounded-xl px-4 py-3 font-['Poppins'] text-[14px] text-[#333] placeholder-gray-400 focus:outline-none focus:border-[#FD5F18] transition-colors";
@@ -106,8 +140,23 @@ export default function Contact() {
                 onChange={handleChange}
                 required
               />
-              <button type="submit" className="cr-btn w-full text-center uppercase tracking-[0.08em] py-4">
-                Submit Message
+              {status.type !== 'idle' && (
+                <p
+                  className={`rounded-2xl px-4 py-3 text-sm ${
+                    status.type === 'success'
+                      ? 'border border-emerald-200 bg-emerald-50 text-emerald-700'
+                      : 'border border-red-200 bg-red-50 text-red-700'
+                  }`}
+                >
+                  {status.message}
+                </p>
+              )}
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="cr-btn w-full py-4 text-center uppercase tracking-[0.08em] disabled:cursor-not-allowed disabled:opacity-70"
+              >
+                {isSubmitting ? 'Sending...' : 'Submit Message'}
               </button>
             </form>
           </div>
