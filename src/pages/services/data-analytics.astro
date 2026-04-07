@@ -67,8 +67,8 @@ const advantages = [
   <!-- Service List Dark -->
   <section class="py-14 lg:py-20 bg-[#1a1a1a]">
     <div class="max-w-325 mx-auto px-6">
-      <div class="flex flex-col lg:flex-row gap-7 lg:gap-12 items-center">
-        <div class="lg:w-6/12">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="flex flex-col items-center">
           <span class="cr-eyebrow mb-4 inline-flex" style="background-color:#2a2a2a; border-color:#3a3a3a; color:#fff;">Service List</span>
           <h2 class="cr-heading-lg mt-4 mb-3">
             <span class="text-[#FD5F18]">Our Data Analytics</span>
@@ -76,8 +76,8 @@ const advantages = [
             <br /><span class="text-white">Realizing Your Data's</span>
             <br /><span class="text-white">Full Potential</span>
           </h2>
-          <p class="cr-body text-white/70 mb-6">A solid data and analytics strategy is the cornerstone of successful business transformation. Partner with Coderuns Solutions to lay the foundation for reliable and forward-thinking practices.</p>
-          <ul class="grid grid-cols-2 gap-y-2 gap-x-6">
+          <p class="cr-body text-white/70 mb-8 max-w-3xl">A solid data and analytics strategy is the cornerstone of successful business transformation. Partner with Coderuns Solutions to lay the foundation for reliable and forward-thinking practices.</p>
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-y-2 gap-x-10 text-left">
             {serviceList.map((s) => (
               <li class="flex items-center gap-2 cr-list-item text-white/80">
                 <svg class="w-3.5 h-3.5 text-[#FD5F18] shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
@@ -85,9 +85,6 @@ const advantages = [
               </li>
             ))}
           </ul>
-        </div>
-        <div class="lg:w-6/12 rounded-2xl overflow-hidden bg-gray-700 min-h-72">
-          <img src="/images/data-analytics-work.jpg" alt="Data Analytics" class="w-full h-full object-cover" onerror="this.parentElement.style.background='#374151'" />
         </div>
       </div>
     </div>
