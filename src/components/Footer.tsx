@@ -4,8 +4,6 @@ const usefulLinks = [
   { label: 'Careers', href: '/careers' },
   { label: 'Contact Us', href: '/contact' },
   { label: 'Blog', href: '/blog' },
-  { label: 'Privacy Policy', href: '/privacy-policy' },
-  { label: 'Terms and Conditions', href: '/terms-and-conditions' },
 ];
 
 const services = [
